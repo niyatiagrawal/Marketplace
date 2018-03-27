@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
+  resources :products
+  resources :seller_profiles
   resources :enquiries
-  devise_for :users
+  # <Niyati - added , controllers: { registrations: "registrations" } below from devise github
+  devise_for :users, controllers: { registrations: "registrations" }
   root 'pages#home'
 
   get 'contact', to: 'pages#contact'

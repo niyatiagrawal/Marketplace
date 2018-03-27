@@ -11,7 +11,15 @@ gem 'country_select'
 gem 'bootstrap'
 gem 'jquery-rails'
 gem 'font-awesome-sass'
-
+# <Niyati - new gem for roles>
+gem 'rolify'
+# <Niyati - gem geocoder for maps
+gem 'geocoder'
+# <Niyati - gem cloudinary and carrierwave for uplaoding pics.
+gem 'cloudinary'
+gem 'carrierwave'
+# <Niyati - gem to have a friendly url.
+gem 'friendly_id'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.5'

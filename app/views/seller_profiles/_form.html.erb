@@ -1,0 +1,39 @@
+
+<%= simple_form_for(@seller_profile) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <!-- <%= f.association :user %> -->
+    <%= f.input :name %>
+    <%= f.input :bio %>
+    <%= f.input :logo %>
+    <%= f.input :address %>
+    <div class="row">
+      <div class="col-md-4">
+        <%= f.input :suburb %>
+      </div>
+      <div class="col-md-4">
+        <%= f.input :state, collection: ['NSW', 'ACT', 'QLD', 'TAS', 'VIC', 'NT', 'WA'], prompt: 'State' %>
+      </div>
+      <div class="col-md-4">
+        <%= f.input :postcode %>
+      </div>
+
+    </div>
+
+    <%= f.input :country, priority: ['Australia'] %>
+    <!-- <%= f.input :latitude %>
+    <%= f.input :longitude %> -->
+  </div>
+
+  <!-- <div class="form-actions">
+    <%= f.button :submit %>
+  </div> -->
+
+  <div class="form-actions">
+    <button type="submit" name="button" class="btn btn-primary" %>
+      <i class="fa user"></i> Create Seller 
+    </button>
+  </div>
+
+<% end %>

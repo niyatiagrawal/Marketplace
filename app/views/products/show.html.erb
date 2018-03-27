@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<div class="card" style="width: 30rem;">
+  <div class="row">
+    <div class="col-md-4">
+        <%= image_tag @product.image_url, class: 'card-img-top' %>
+    </div>
+    <div class="col-md-4">
+      <h5 class="card-title"> <%= @product.name %></h5>
+        <p>
+          <strong>Description:</strong>
+          <%= @product.description %>
+        </p>
+        <p>
+          <strong>Price:</strong>
+          <i class="fas fa-dollar-sign"></i><%= @product.price %>
+        </p>
+        <p>
+          <strong>Num in stock:</strong>
+          <%= @product.num_in_stock %>
+        </p>
+    </div>
+  </div>
+
+  <!-- <div class="card-body">
+
+  </div> -->
+</div>
+<br>
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>

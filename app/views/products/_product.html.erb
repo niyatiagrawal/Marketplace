@@ -1,0 +1,25 @@
+<div class="card">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-2">
+          <%= image_tag product.image_url, class: 'img-fluid' %>
+        </div>
+        <div class="col-md-10">
+          <!-- <Niyati - I added the below code to get the link working> -->
+          <h5 class="card-title"><%= link_to product.name, product %></h5>
+          <p><%= product.description %></p>
+          <!-- <Niyati - added price and number of stock> -->
+          <div class="row">
+            <div class="col-md-4">
+              <strong>Price:</strong>
+              <i class="fas fa-dollar-sign"></i> <%= product.price %>
+            </div>
+            <div class="col-md-4">
+              <strong>Stock check:</strong>
+              <%= product.num_in_stock %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

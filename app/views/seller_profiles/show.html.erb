@@ -1,0 +1,101 @@
+<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-md-4">
+    <div class="card">
+
+      <%= image_tag @seller_profile.logo_url, class: 'card-img-top' %>
+      <!-- <Niyati - check bootstrap -> card to make changes to how the poage would look -->
+      <div class="card card-body">
+        <h5 class="card-title"><%= @seller_profile.name %></h5>
+      <p>
+        <strong>Email:</strong>
+        <%= @seller_profile.user.email %>
+      </p>
+
+      <p>
+        <strong>Name:</strong>
+        <%= @seller_profile.name %>
+      </p>
+
+      <p>
+        <strong>Bio:</strong>
+        <%= @seller_profile.bio %>
+      </p>
+
+      <!-- <p> Niyati this is commented as we moved the logo logic right below div
+        <strong>Logo:</strong>
+        <%= image_tag @seller_profile.logo_url %>
+      </p> -->
+
+      <p>
+        <strong>Address:</strong>
+        <%= @seller_profile.full_address %>
+        <!-- <Niyati - the method is called from seller_profile.rb i.e. it then sends the address in a better foramt. This is a gloval method and we instantiate it from here too. -->
+      </p>
+      <!-- <Niyati -deleted tje rest of the address froj below> -->
+
+      <!-- <Niyati - adding google map code below> -->
+      <div id="map"></div>
+
+      <% if @seller_profile == current_user.seller_profile %>
+        <%= link_to '<i class="fa fa-edit"></i> Edit'.html_safe, edit_seller_profile_path(@seller_profile), class: 'btn btn-primary' %>
+      <% end %>
+
+    </div>
+  </div>
+</div>
+<!-- <Niyati - added the belwo to launch modal -->
+<div class="col-md-8">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        <i class="fa fa-plus-square"></i> Add Product
+    </button>
+
+    <!-- <Niyati - add the below code to show the product details once added> -->
+    <hr>
+
+    <div id="product-list">
+      <%= render @products %>
+    </div>
+
+</div>
+</div>
+
+<!-- <Niyati - the rest of Modal code> -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Product</h5>
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- <Niyati - add the form for the prodcut> -->
+        <%= render 'products/form' %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function initMap() {
+    var location = {lat: <%= @seller_profile.latitude %>, lng: <%= @seller_profile.longitude %>};
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 14,
+      center: location
+    });x
+    var marker = new google.maps.Marker({
+      position: location,
+      map: map
+    });
+  }
+</script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQN_i4P9DFcrq4GksjKmVKGW8YhQoconw&callback=initMap">
+</script>

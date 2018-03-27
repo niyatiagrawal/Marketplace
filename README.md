@@ -12,7 +12,7 @@ This is my starter app, please feel free to use it
 - Navbar
 - Pages: home, about, contact, privacy
 - Enquiries mailer
-
+- Setup mailgun\
 ----------------------
 
 This README would normally document whatever steps are necessary to get the

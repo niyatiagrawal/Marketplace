@@ -38,7 +38,7 @@ Rails.application.configure do
     port:                 587,
     # <Niyati - domain name is from default SMTP login from mailgun and remove everything ebfore @, user name and pwd is also from there. We have exported it via the terminal and then adthed where to pick it up from
     domain:               ENV['MAILGUN_DOMAIN'],
-    user_name:            'postmaster@' + ENV['MAILGUN_DOMAIN'],
+    # user_name:            'postmaster@' + ENV['MAILGUN_DOMAIN'],
     password:             ENV['MAILGUN_PASSWORD'],
     authentication:       'plain',
     # <Niyati - make it false in dev, in prod keep it true. its like SSL

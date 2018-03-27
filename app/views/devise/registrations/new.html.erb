@@ -10,6 +10,10 @@
         <%= f.error_notification %>
 
         <div class="form-inputs">
+          <!-- <Niyati - add the below logic to check if the user clicked on sell stuff rthen pass the seller user type. We hide it so that user doesnt see it-->
+          <% if params[:user_type] %>
+            <%= f.input :user_type, as: :hidden, input_html: { value: params[:user_type] } %>
+          <% end %>
           <%= f.input :email, required: true, autofocus: true %>
           <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
           <!-- <Niyati - to not make the user type it twice> -->

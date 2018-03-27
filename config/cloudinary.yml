@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: nymeria
+  api_key: '353625659722469'
+  api_secret: _xZ2eWfKSRKdvzAYFi4HnIVvTz4
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: nymeria
+  api_key: '353625659722469'
+  api_secret: _xZ2eWfKSRKdvzAYFi4HnIVvTz4
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: nymeria
+  api_key: '353625659722469'
+  api_secret: _xZ2eWfKSRKdvzAYFi4HnIVvTz4
+  enhance_image_tag: true
+  static_image_support: false
